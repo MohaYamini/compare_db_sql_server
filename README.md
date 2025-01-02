@@ -38,19 +38,13 @@ project-root/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/db-compare-tool.git
+   git clone https://github.com/MohaYamini/compare_db_sql_server.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd db-compare-tool
+   cd db-compare_db_sql_server
    ```
-
-3. Install dependencies using Composer:
-   ```bash
-   composer install
-   ```
-
 ---
 
 ## Configuration
@@ -91,8 +85,22 @@ project-root/
    - Compare `db1` and `db2` schemas.
    - Generate SQL scripts to synchronize `db2` with `db1`.
 
-3. Check the generated SQL script in the `scripts/output.sql` file.
+3. Choose an option:
+   - Enter `1` to compare all tables and generate scripts.
+   - Enter `2` to compare specific tables listed in data/tables_to_compare.txt.
 
+4. Check the generated SQL script in the `scripts/output.sql` file.
+
+---
+
+## Input Files
+**File**: `data/tables_to_compare.txt`
+- If option `2` is selected, ensure this file contains the names of the tables to compare, one per line:
+   ```bash
+   Table1
+   Table2
+   Table3
+   ```
 ---
 
 ## Example Output
@@ -121,12 +129,6 @@ ALTER TABLE [Leads] ADD [id_quartier] INT NULL;
 
 - This tool is designed specifically for Microsoft SQL Server. If using a different database, adapt the SQL generation logic accordingly.
 - Always back up your databases before applying generated SQL scripts.
-
----
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
